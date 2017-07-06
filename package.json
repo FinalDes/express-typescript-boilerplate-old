@@ -4,6 +4,7 @@
   "main": "index.js",
   "author": "Alex Alonso <alex4551@gmail.com>",
   "license": "MIT",
+  "repository": "git@github.com:FinalDes/express-typescript-boilerplate.git",
   "scripts": {
     "build": "del-cli dist && webpack --config webpack.config.js --progress --profile --bail",
     "eslint": "eslint webpack.config.js",
