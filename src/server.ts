@@ -1,14 +1,18 @@
 import express = require("express");
+ /* tslint:disable:no-console */
 
 export class Server {
-    public static bootstrap(): express.Application {
-        return new Server(3000).app;
+    public static bootstrap(port?: number): express.Application {
+        // if (port === undefined) {
+        //     port = 3000;
+        // }
+        port = port === undefined ? 3000 : port;
+        return new Server(port).app;
     }
     public app: express.Application;
     private constructor(port: number) {
         this.app = express();
         this.app.listen(port, () => {
-            /* tslint:disable:no-console */
             console.log("listening on " + port);
         });
     }
