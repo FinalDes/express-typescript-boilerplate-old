@@ -3,10 +3,7 @@ import express = require("express");
 
 export class Server {
     public static bootstrap(port?: number): express.Application {
-        // if (port === undefined) {
-        //     port = 3000;
-        // }
-        port = port === undefined ? 3000 : port;
+        port =  port === undefined ? 3000 : port;
         return new Server(port).app;
     }
     public app: express.Application;
