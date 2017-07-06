@@ -1,0 +1,13 @@
+{
+  "name": "typescript-express",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Alex Alonso <alex4551@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build":"tsc -p tsconfig.json"
+  },
+  "devDependencies": {
+    "typescript": "^2.4.1"
+  }
+}
