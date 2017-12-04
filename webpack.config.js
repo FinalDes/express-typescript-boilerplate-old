@@ -1,5 +1,14 @@
 const path = require("path");
+const fs = require("fs");
+const MinifyPlugin = require("babel-minify-webpack-plugin");
 // const webPack = require('webpack');
+
+const nodeModules = {};
+fs.readdirSync("node_modules")
+  .filter(x => [".bin"].indexOf(x) === -1)
+  .forEach((mod) => {
+    nodeModules[mod] = `commonjs ${mod}`;
+  });
 
 module.exports = {
   target: "node",
@@ -30,7 +39,8 @@ module.exports = {
       },
     ],
   },
+  externals: nodeModules,
   plugins: [
-  // new webPack.optimize.UglifyJsPlugin()
+    new MinifyPlugin(),
   ],
 };
